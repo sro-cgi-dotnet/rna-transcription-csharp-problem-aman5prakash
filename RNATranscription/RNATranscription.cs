@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace RNATranscriptionModule
 {
@@ -6,29 +7,30 @@ namespace RNATranscriptionModule
     {
         public static string ToRna(string nucleotide)
         {
-            string rna = null;
+            StringBuilder rna = new StringBuilder();
+
             int n = nucleotide.Length;
-            for (int i = 0; i < n; i++)
+           for (int i = 0; i < n; i++)
             {
                 switch (nucleotide[i])
                 {
                     case 'G':
-                        rna += 'C';
+                        rna.Append ('C');
                         break;
                     case 'C':
-                        rna += 'G';
+                        rna.Append('G');
                         break;
                     case 'T':
-                        rna += 'A';
+                        rna.Append('A');
                         break;
                     case 'A':
-                        rna += 'U';
+                        rna.Append('U');
                         break;
                     default:
                         break;
-                }               
+                }         
             }
-            return rna;
+            return rna.ToString();
         }
     }
 }
