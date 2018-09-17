@@ -31,6 +31,7 @@ namespace RNATranscriptionModule
                         rna.Append('U');
                         break;
                     default:
+                        throw (new ArgumentException("Invalid DNA Sequence"));
                         break;
                 }
             }
