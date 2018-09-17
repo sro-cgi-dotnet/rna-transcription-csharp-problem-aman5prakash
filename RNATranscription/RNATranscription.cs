@@ -7,15 +7,19 @@ namespace RNATranscriptionModule
     {
         public static string ToRna(string nucleotide)
         {
+            // StringBuilder to create a new string object
             StringBuilder rna = new StringBuilder();
 
             int n = nucleotide.Length;
-           for (int i = 0; i < n; i++)
+
+            // To take each char of string nucleotide
+            for (int i = 0; i < n; i++)
             {
+                //append each character in stringbuilder object
                 switch (nucleotide[i])
                 {
                     case 'G':
-                        rna.Append ('C');
+                        rna.Append('C');
                         break;
                     case 'C':
                         rna.Append('G');
@@ -28,7 +32,7 @@ namespace RNATranscriptionModule
                         break;
                     default:
                         break;
-                }         
+                }
             }
             return rna.ToString();
         }
@@ -37,4 +41,3 @@ namespace RNATranscriptionModule
 
 
 
- 
